@@ -173,7 +173,7 @@
     });
     
     function fetchVehiculos() {
-        fetch('http://18.116.66.118:3053/api/Vehiculos')
+        fetch('http://3.129.128.247:3053/api/Vehiculos')
             .then(response => response.json())
             .then(data => {
                 const tableBody = document.getElementById('vehiculosTableBody');
@@ -211,7 +211,7 @@
             estado: estado
         };
     
-        fetch('http://18.116.66.118:3053/api/Vehiculos', {
+        fetch('http://3.129.128.247:3053/api/Vehiculos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

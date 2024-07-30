@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 function fetchInspeccionadores() {
-    fetch('http://18.116.66.118:3053/api/Inspeccionadores')
+    fetch('http://3.129.128.247/api/Inspeccionadores')
         .then(response => response.json())
         .then(data => {
             const tableBody = document.getElementById('inspeccionadoresTableBody');
@@ -195,7 +195,7 @@ function agregarInspeccionador() {
         cargo: cargo
     };
 
-    fetch('http://18.116.66.118:3053/api/Inspeccionadores', {
+    fetch('http://3.129.128.247/api/Inspeccionadores', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

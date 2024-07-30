@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 function fetchProveedores() {
-    fetch('http://18.116.66.118:3053/api/Provedores')
+    fetch('http://3.129.128.247:3053/api/Provedores')
         .then(response => response.json())
         .then(data => {
             const tableBody = document.getElementById('proveedoresTableBody');
@@ -198,7 +198,7 @@ function agregarProveedor() {
         empresa: empresa
     };
 
-    fetch('http://18.116.66.118:3053/api/Provedores', {
+    fetch('http://3.129.128.247:3053/api/Provedores', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
