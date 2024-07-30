@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        body {
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+          background: url('https://i.pinimg.com/originals/59/5c/68/595c680350300cf74c0e1b2bed13d6fd.jpg');
+          color: #f8f9fa;
+        }
+        .navbar-dark .navbar-brand {
+          color: #f8f9fa;
+        }
+        .navbar-dark .navbar-nav .nav-link {
+          color: #f8f9fa;
+        }
+        .footer {
+          background: url('https://media.istockphoto.com/id/1306402040/es/vector/colorido-patr%C3%B3n-de-repetici%C3%B3n-sin-costuras-con-estilo-geom%C3%A9trico-minimalista-abstracto.jpg?s=612x612&w=0&k=20&c=87q17fOthphQPwb8WO7e7sqJRJDAoNQE08_uiiL0mJk=') no-repeat center center;
+          background-size: cover;
+          color: #f8f9fa;
+          padding: 20px 0;
+          text-align: center;
+          position: relative;
+          width: 100%;
+          bottom: 0;
+        }
+        .footer::after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.5); /* Overlay para mejorar la legibilidad del texto */
+        }
+        .footer-content {
+          position: relative;
+          z-index: 1;
+        }
+        .container {
+          flex: 1;
+        }
+      </style>
+    </head>
+    <body>
+      <!-- Header -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img src="https://bladecon.net/wp-content/uploads/2020/11/Logo-Header2.png" alt="Logo" style="width: 180px;">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="carga.html">Contenedor</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="conductor.html">Conductor</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="custoemrs.html">Clientes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="inspeccionador.html">Inspeccionador</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="provedor.html">Proveedor</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="vehiculos.html">Vehículos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+    <div class="container mt-5">
+        <h1 class="mb-4">Vehículos</h1>
+        <!-- Button to Open the Modal -->
+        <button type="button" class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#myModal">
+            Agregar Vehículo
+        </button>
+        
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="color: black;">Nuevo Vehículo</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form id="vehiculoForm">
+                            <div class="mb-3">
+                                <label for="marca" class="form-label" style="color: black;">Marca:</label>
+                                <input type="text" class="form-control" id="marca" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="modelo" class="form-label" style="color: black;">Modelo:</label>
+                                <input type="text" class="form-control" id="modelo" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="año" class="form-label" style="color: black;">Año:</label>
+                                <input type="date" class="form-control" id="año" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="color" class="form-label" style="color: black;">Color:</label>
+                                <input type="text" class="form-control" id="color" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="placa" class="form-label" style="color: black;">Placa:</label>
+                                <input type="text" class="form-control" id="placa">
+                            </div>
+                            <div class="mb-3">
+                                <label for="estado" class="form-label" style="color: black;">Estado:</label>
+                                <select class="form-select" id="estado" required>
+                                    <option selected disabled>Seleccione el estado</option>
+                                    <option value="activo">Activo</option>
+                                    <option value="inactivo">Inactivo</option>
+                                    <option value="reparacion">Reparación</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Table to display vehículos -->
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Año</th>
+                    <th>Color</th>
+                    <th>Placa</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody id="vehiculosTableBody">
+                <!-- Data will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript for handling API and modal -->
+    <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        fetchVehiculos();
+    
+        document.getElementById('vehiculoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            agregarVehiculo();
+        });
+    });
+    
+    function fetchVehiculos() {
+        fetch('http://18.116.66.118:3053/api/Vehiculos')
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.getElementById('vehiculosTableBody');
+                tableBody.innerHTML = '';
+                data.forEach(vehiculo => {
+                    const row = `<tr>
+                        <td>${vehiculo.id}</td>
+                        <td>${vehiculo.marca}</td>
+                        <td>${vehiculo.modelo}</td>
+                        <td>${vehiculo.año}</td>
+                        <td>${vehiculo.color}</td>
+                        <td>${vehiculo.placa}</td>
+                        <td>${vehiculo.estado}</td>
+                    </tr>`;
+                    tableBody.innerHTML += row;
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    }
+    
+    function agregarVehiculo() {
+        const marca = document.getElementById('marca').value;
+        const modelo = document.getElementById('modelo').value;
+        const año = document.getElementById('año').value;
+        const color = document.getElementById('color').value;
+        const placa = document.getElementById('placa').value;
+        const estado = document.getElementById('estado').value;
+    
+        const newVehiculo = {
+            marca: marca,
+            modelo: modelo,
+            año: año,
+            color: color,
+            placa: placa,
+            estado: estado
+        };
+    
+        fetch('http://18.116.66.118:3053/api/Vehiculos', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newVehiculo)
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Close the modal
+            const modal = bootstrap.Modal.getInstance(document.getElementById('myModal'));
+            modal.hide();
+            // Clear the form
+            document.getElementById('vehiculoForm').reset();
+            // Update the table
+            fetchVehiculos();
+        })
+        .catch(error => console.error('Error:', error));
+    }
+    </script>
+
+    
+<!-- Footer -->
+<footer class="footer mt-auto">
+    <div class="footer-content">
+      <div class="container">
+        <p class="mb-0">&copy; 2024 Mi Empresa. Todos los derechos reservados.</p>
+      </div>
+    </div>
+</footer>
+    </body>
+    </html>
